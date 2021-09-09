@@ -29,13 +29,13 @@ public class SpaDayController {
     public String customerForm () {
         String html = "<form method = 'post'>" +
                 "Name: <br>" +
-                "<input type = 'text' name = 'name'>" +
+                "<input type = 'text' name='name'>" +
                 "<br>Skin type: <br>" +
-                "<select name = 'skintype'>" +
-                "<option value = 'oily'>Oily</option>" +
-                "<option value = 'combination'>Combination</option>" +
-                "<option value = 'normal'>Normal</option>" +
-                "<option value = 'dry'>Dry</option>" +
+                "<select name='skintype'>" +
+                "<option value='oily'>Oily</option>" +
+                "<option value='combination'>Combination</option>" +
+                "<option value='normal'>Normal</option>" +
+                "<option value='dry'>Dry</option>" +
                 "</select><br>" +
                 "Manicure or Pedicure? <br>" +
                 "<select name = 'manipedi'>" +
@@ -63,6 +63,12 @@ public class SpaDayController {
             }
         }
 
+        model.addAttribute("name", name);
+        model.addAttribute("skintype", skintype);
+        model.addAttribute("manipedi", manipedi);
+        model.addAttribute("appropriateFacials", appropriateFacials);
+
         return "menu";
     }
+
 }
